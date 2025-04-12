@@ -34,6 +34,10 @@
   .logo i{
     margin: 0 5px;
   }
+  .controls{
+    gap: 20px;
+    width: 60%;
+  }
   
   .top-controls button {
     padding: 8px 14px;
@@ -45,10 +49,12 @@
     font-weight: 500;
     transition: background-color 0.3s ease;
   }
-  .controls{
-    gap: 20px;
-    width: 60%;
+ .top-controls button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
+  
   .controls input {
   padding: 7px 8px;
   margin-right: 10px;
@@ -69,10 +75,6 @@
   #invalidAlert i {
     margin-right: 5px;
     color: red;
-  }
-  
-  .top-controls button:hover {
-    background-color: #0056b3;
   }
   
   .log-icon {
@@ -132,6 +134,21 @@
     position: absolute;
     z-index: 2;
   }
+ .tooltip-text p{
+    margin-bottom: 5px;
+  }
+  
+  .tooltip-text ul {
+    padding-left: 16px; /* or 1rem */
+    margin: 0;
+    list-style-type: disc; /* or circle/square */
+  }
+  
+  .tooltip-text li {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
   
   .info-icon:hover .tooltip-text {
     visibility: visible;
