@@ -1,0 +1,229 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    height: 100vh;
+  }
+  
+  .top-controls div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: white;
+    height: 80px;
+  }
+  .logo{
+    font-size: 18px;
+    font-weight: 600;
+    width: 25%;
+    display: flex;
+    background: linear-gradient(to right, #ff6ec4, #a4a2ec); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ 
+  }
+  .logo i{
+    margin: 0 5px;
+  }
+  
+  .top-controls button {
+    padding: 8px 14px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  .controls{
+    gap: 20px;
+    width: 60%;
+  }
+  .controls input {
+  padding: 7px 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  width: 140px;
+
+}
+
+  #invalidAlert {
+    font-size: 14px;
+    margin-left: 10px;
+    color: red;
+    display: none;
+  }
+  #invalidAlert i {
+    margin-right: 5px;
+    color: red;
+  }
+  
+  .top-controls button:hover {
+    background-color: #0056b3;
+  }
+  
+  .log-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color:rgb(252, 179, 191);
+
+  }
+  
+  .main-container {
+    display: flex;
+    height: calc(100vh - 80px);
+  }
+  
+  .node-list {
+    width: 180px;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  
+  .node-list li {
+    background-color: #dee2e6;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .graph-panel {
+    position: relative;
+    flex-grow: 1;
+    background-color: #fff;
+    overflow: auto;
+  }
+
+  .info-icon {
+    position: relative;
+    display: block;
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #3498db;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    width: 70%;
+    background-color:#dee2e6;;
+    color: #000000;
+    font-size: 14px;
+    text-align: left;
+    border-radius: 8px;
+    padding: 12px;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  .info-icon:hover .tooltip-text {
+    visibility: visible;
+  }
+  
+  /* Nodes */
+  .node {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
+  
+  .node:hover {
+    transform: scale(1.1);
+  }
+  
+  /* SVG Connections */
+  .connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* Connection Card */
+  .connection-card {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 160px;
+    z-index: 10;
+  }
+  
+  .connection-card.hidden {
+    display: none;
+  }
+  
+  .connection-card input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .card-title {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  
+  
+  
+  /* Logs */
+  .logs {
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    width: 300px;
+    height: fit-content;
+    max-height: 600px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+    z-index: 20;
+  }
+  .path-highlight  {
+    color: red;
+    font-weight: bold;
+  }
+  
+  
+  .logs.hidden {
+    display: none;
+  }

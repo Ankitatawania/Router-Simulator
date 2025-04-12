@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routing Simulator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <div class="top-controls">
+    <div>
+      <div class="logo"><i class="fas fa-desktop"></i>Router Simulator</div>
+      
+      <div class="controls">
+        <div><button id="addNode">Add Router</button></div>
+        <div><input type="text" id="sourceInput" placeholder="Source Router" />
+          <input type="text" id="destinationInput" placeholder="Destination Router" />
+          <button id="findPathButton">Find Path</button>
+          <span id="invalidAlert"> <i class="fas fa-triangle-exclamation"></i> Invalid Router</span></div>
+        
+        <div><button id="resetButton">Reset</button></div>
+      </div>
+      
+      <div class="log-icon" onclick="toggleLogs()"><i class="fas fa-terminal"></i></div>
+    </div>
+    
+  </div>
+
+  <div class="main-container">
+    <ul id="nodeList" class="node-list"></ul>
+    <div id="graphPanel" class="graph-panel">
+      <div class="info-icon">
+        <i class="fas fa-circle-info"></i>
+        <div class="tooltip-text">
+          <p><strong>About the Router Simulator:</strong><br>
+            This simulator represents routers as nodes in a network. It's designed to help visualize and understand how routers connect and communicate in a network topology.
+          </p>
+          <p><strong>How it works:</strong><br>
+            Add routers, define connections with weights, and use the 'Find Path' feature to see the shortest route between any two routers. The shortest path is visually highlighted.
+          </p>
+        </div>
+      </div>
+      <svg id="connectionLines" class="connection-lines"></svg>
+    </div>
+  </div>
+  
+  
+
+  <div id="logs" class="logs hidden"></div>
+
+  <!-- Floating connection card -->
+  <div id="connectionCard" class="connection-card hidden">
+    <div class="card-title">add connection</div>
+    <input type="text" id="targetNodeInput" placeholder="To node">
+    <input type="number" id="weightInput" placeholder="Weight">
+  </div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
+
