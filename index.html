@@ -23,7 +23,7 @@
         <div><button id="resetButton">Reset</button></div>
       </div>
       
-      <div class="log-icon" onclick="toggleLogs()"><i class="fas fa-terminal"></i></div>
+      <div class="log-icon" ><i class="fas fa-terminal" title = "Logs/History"></i></div>
     </div>
     
   </div>
@@ -37,8 +37,15 @@
           <p><strong>About the Router Simulator:</strong><br>
             This simulator represents routers as nodes in a network. It's designed to help visualize and understand how routers connect and communicate in a network topology.
           </p>
-          <p><strong>How it works:</strong><br>
-            Add routers, define connections with weights, and use the 'Find Path' feature to see the shortest route between any two routers. The shortest path is visually highlighted.
+         <p><strong>How it works:</strong><br>
+            <ul>
+              <li>Click on "Add Router" button to add a new router.</li>
+              <li>Click on a Router to make connections.</li>
+              <li>Input the Router name and weight .</li>
+              <li>Use the "Find Path" button to find the shortest path between source and destination provided as input by you.</li>
+              <li>Click the log icon to toggle connection and path history.</li>
+              <li>Use "Reset" button to reset the network simulation.</li>
+            </ul>
           </p>
         </div>
       </div>
