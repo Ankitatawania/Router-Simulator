@@ -10,16 +10,10 @@ let nodes = [];
 let connections = [];
 let selectedNode = null;
 
-document.getElementById("findPathButton").addEventListener('click', () => {
-  findPath();
-});
-document.getElementById("addNode").addEventListener('click', () => {
-  addRouter();
-});
-document.getElementById("resetButton").addEventListener('click', () => {
-  resetAll();
-});
-
+document.getElementById("findPathButton").onclick = findPath;
+document.getElementById("addNode").onclick = addRouter;
+document.getElementById("resetButton").onclick = resetAll;
+document.querySelector(".log-icon").onclick = toggleLogs;
 
 function addRouter() {
   const node = document.createElement("div");
